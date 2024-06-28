@@ -7,7 +7,7 @@
     "UiPath.Excel.Activities": "[2.22.4]",
     "UiPath.System.Activities": "[23.10.6]",
     "UiPath.Testing.Activities": "[23.10.1]",
-    "UiPath.UIAutomation.Activities": "[23.10.11]"
+    "UiPath.UIAutomation.Activities": "[24.10.1]"
   },
   "webServices": [],
   "entitiesStores": [],
@@ -94,6 +94,12 @@
     {
       "filePath": "Main.xaml",
       "uniqueId": "e7801a8e-52c2-4d85-9863-cb22064ecd0d",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "System1\\Gender.xaml",
+      "uniqueId": "fa157ac2-c746-45a7-9581-44152c1f8071",
       "input": [],
       "output": []
     }
