@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1362.4,648.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1361.6,648.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PopulateQueue_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -115,18 +115,17 @@
             <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" FolderPath="[in_QueueFolder]" sap:VirtualizedContainerService.HintSize="334.4,194.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="[in_QueueName]" Reference="[CurrentRow.Item(&quot;FirstName&quot;).ToString]">
               <ui:AddQueueItem.ItemInformation>
                 <InArgument x:TypeArguments="x:String" x:Key="FirstName">[CurrentRow("FirstName").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="MiddleName">[CurrentRow("MiddleName").ToString]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="LastName">[CurrentRow("LastName").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Mother">[CurrentRow("Mother's maiden name").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Meaning of the first name ">[CurrentRow("Beverly").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Mother's Maiden Name ">[CurrentRow("Mother's maiden name").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Phone">[CurrentRow("Phone").ToString]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="Country code">[CurrentRow("Country code").ToString]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="Birthday">[CurrentRow("Birthday").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Email Address">[CurrentRow("Email Address").ToString]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="Company">[CurrentRow("Company").ToString]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="Favorite color">[CurrentRow("Favorite color").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Email Address">[CurrentRow("Email Address").ToString]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="Username">[CurrentRow("Username").ToString]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="Password">[CurrentRow("Password").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Beverly">[CurrentRow("Beverly").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Phone">[CurrentRow("Phone").ToString]</InArgument>
               </ui:AddQueueItem.ItemInformation>
             </ui:AddQueueItem>
           </Sequence>
