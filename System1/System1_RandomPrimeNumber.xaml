@@ -1,0 +1,255 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="System1_RandomPrimeNumber" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
+    <x:Property Name="Out_NumGen" Type="OutArgument(x:Int32)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1362.4,2364.8</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>System1_RandomPrimeNumber_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="System1_RandomPrimeNumber" sap:VirtualizedContainerService.HintSize="726.4,2300" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="num" />
+      <Variable x:TypeArguments="x:Int32" Name="count" />
+      <Variable x:TypeArguments="x:Int32" Name="i" />
+      <Variable x:TypeArguments="x:String" Name="variable1" />
+      <Variable x:TypeArguments="x:Int32" Name="number" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="664,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[num]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[New System.Random().Next(10,50)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="664,1944.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+      <ui:InterruptibleWhile.Body>
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="630.4,1808" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="587.2,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+          <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[i&lt;=num/2]" DisplayName="While" sap:VirtualizedContainerService.HintSize="587.2,767.2" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+            <ui:InterruptibleWhile.Body>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.6,630.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If Condition="[num Mod i = 0]" sap:VirtualizedContainerService.HintSize="510.4,419.2" sap2010:WorkflowViewState.IdRef="If_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="476.8,236" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[count+1]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:Break sap:VirtualizedContainerService.HintSize="433.6,24.8" sap2010:WorkflowViewState.IdRef="Break_1" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <Assign sap:VirtualizedContainerService.HintSize="510.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[i+1]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </ui:InterruptibleWhile.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InterruptibleWhile>
+          <If Condition="[count=0 And num&lt;&gt;1]" sap:VirtualizedContainerService.HintSize="587.2,601.6" sap2010:WorkflowViewState.IdRef="If_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="476.8,418.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Out_NumGen]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[num]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;PrimeNumber: &quot; + Out_NumGen.ToString]" />
+                <ui:Break sap:VirtualizedContainerService.HintSize="433.6,24.8" sap2010:WorkflowViewState.IdRef="Break_2" />
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </If.Else>
+          </If>
+          <Assign sap:VirtualizedContainerService.HintSize="587.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[num]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[num+1]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ui:InterruptibleWhile.Body>
+      <ui:InterruptibleWhile.Condition>
+        <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="num&lt;= 50" />
+      </ui:InterruptibleWhile.Condition>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InterruptibleWhile>
+    <Assign sap:VirtualizedContainerService.HintSize="664,81.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[Out_NumGen]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[Out_NumGen + 1]</InArgument>
+      </Assign.Value>
+    </Assign>
+  </Sequence>
+</Activity>

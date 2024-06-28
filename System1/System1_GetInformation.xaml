@@ -1,0 +1,803 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="System1_GetInformation" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_dt_Identity" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1361.6,3846.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>System1_GetInformation_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="System1_GetInformation" sap:VirtualizedContainerService.HintSize="617.6,3781.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="FavoriteColor" />
+      <Variable x:TypeArguments="x:String" Name="Mothers" />
+      <Variable x:TypeArguments="x:String" Name="Phone" />
+      <Variable x:TypeArguments="x:String" Name="CountryCode" />
+      <Variable x:TypeArguments="x:String" Name="Birthday" />
+      <Variable x:TypeArguments="x:String" Name="Username" />
+      <Variable x:TypeArguments="x:String" Name="Password" />
+      <Variable x:TypeArguments="x:String" Name="EmailAddress" />
+      <Variable x:TypeArguments="x:String" Name="Company" />
+      <Variable x:TypeArguments="x:String" Name="Occupation" />
+      <Variable x:TypeArguments="x:String" Name="FullName" />
+      <Variable x:TypeArguments="x:Boolean" Name="Beverly" />
+      <Variable x:TypeArguments="x:String" Name="SpiltEmailAddress" />
+      <Variable x:TypeArguments="x:String" Name="TextBeverly" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DataTable="[out_dt_Identity]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="555.2,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;FullName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;FirstName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;MiddleName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;LastName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Birthday&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Beverly&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Mother_x0027_s_x0020_maiden_x0020_name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Phone&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country_x0020_code&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Company&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Favorite_x0020_color&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Email_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Username&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Password&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName /&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe Generate'" sap:VirtualizedContainerService.HintSize="555.2,2617.6" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="fc2c196d37be8697b789a3a1baea27af" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;">
+      <ui:BrowserScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,2470.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  Arabic" sap:VirtualizedContainerService.HintSize="387.2,156" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="Arabic">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="64">
+                  <x:String>American</x:String>
+                  <x:String>Arabic</x:String>
+                  <x:String>Australian</x:String>
+                  <x:String>Brazil</x:String>
+                  <x:String>Chechen (Latin)</x:String>
+                  <x:String>Chinese</x:String>
+                  <x:String>Chinese (Traditional)</x:String>
+                  <x:String>Croatian</x:String>
+                  <x:String>Czech</x:String>
+                  <x:String>Danish</x:String>
+                  <x:String>Dutch</x:String>
+                  <x:String>England/Wales</x:String>
+                  <x:String>Eritrean</x:String>
+                  <x:String>Finnish</x:String>
+                  <x:String>French</x:String>
+                  <x:String>German</x:String>
+                  <x:String>Greenland</x:String>
+                  <x:String>Hispanic</x:String>
+                  <x:String>Hobbit</x:String>
+                  <x:String>Hungarian</x:String>
+                  <x:String>Icelandic</x:String>
+                  <x:String>Igbo</x:String>
+                  <x:String>Italian</x:String>
+                  <x:String>Japanese</x:String>
+                  <x:String>Japanese (Anglicized)</x:String>
+                  <x:String>Klingon</x:String>
+                  <x:String>Ninja</x:String>
+                  <x:String>Norwegian</x:String>
+                  <x:String>Persian</x:String>
+                  <x:String>Polish</x:String>
+                  <x:String>Russian</x:String>
+                  <x:String>Russian (Cyrillic)</x:String>
+                  <x:String>Scottish</x:String>
+                  <x:String>Slovenian</x:String>
+                  <x:String>Swedish</x:String>
+                  <x:String>Thai</x:String>
+                  <x:String>Vietnamese</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f0d22141-a5ad-4fe5-b98b-cf0399a6e330" InformativeScreenshot="dde6ef6b46c779b6c4ef578a67b274b0" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl id='n' tag='SELECT' visibleinnertext='American&amp;#xA;Arabic&amp;#xA;Australian&amp;#xA;Brazil&amp;#xA;Chechen (Latin)&amp;#xA;Chinese&amp;#xA;Chinese (Traditional)&amp;#xA;Croatian&amp;#xA;Czech&amp;#xA;Danish&amp;#xA;Dutch&amp;#xA;England/Wales&amp;#xA;Eritrean&amp;#xA;Finnish&amp;#xA;French&amp;#xA;German&amp;#xA;Greenland&amp;#xA;Hispanic&amp;#xA;Hobbit&amp;#xA;Hungarian&amp;#xA;Icelandic&amp;#xA;Igbo&amp;#xA;Italian&amp;#xA;Japanese&amp;#xA;Japanese (Anglicized)&amp;#xA;Klingon&amp;#xA;Ninja&amp;#xA;Norwegian&amp;#xA;Persian&amp;#xA;Polish&amp;#xA;Russian&amp;#xA;Russian (Cyrillic)&amp;#xA;Scottish&amp;#xA;Slovenian&amp;#xA;Swedish&amp;#xA;Thai&amp;#xA;Vietnamese' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  c'" sap:VirtualizedContainerService.HintSize="387.2,156" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="Tunisia">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="32">
+                  <x:String>Australia</x:String>
+                  <x:String>Austria</x:String>
+                  <x:String>Belgium</x:String>
+                  <x:String>Brazil</x:String>
+                  <x:String>Canada</x:String>
+                  <x:String>Cyprus (Anglicized)</x:String>
+                  <x:String>Cyprus (Greek)</x:String>
+                  <x:String>Czech Republic</x:String>
+                  <x:String>Denmark</x:String>
+                  <x:String>Estonia</x:String>
+                  <x:String>Finland</x:String>
+                  <x:String>France</x:String>
+                  <x:String>Germany</x:String>
+                  <x:String>Greenland</x:String>
+                  <x:String>Hungary</x:String>
+                  <x:String>Iceland</x:String>
+                  <x:String>Italy</x:String>
+                  <x:String>Netherlands</x:String>
+                  <x:String>New Zealand</x:String>
+                  <x:String>Norway</x:String>
+                  <x:String>Poland</x:String>
+                  <x:String>Portugal</x:String>
+                  <x:String>Slovenia</x:String>
+                  <x:String>South Africa</x:String>
+                  <x:String>Spain</x:String>
+                  <x:String>Sweden</x:String>
+                  <x:String>Switzerland</x:String>
+                  <x:String>Tunisia</x:String>
+                  <x:String>United Kingdom</x:String>
+                  <x:String>United States</x:String>
+                  <x:String>Uruguay</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="852dc22a-b1fc-43e6-9804-08e5845ae53a" InformativeScreenshot="41a7671ee47f352a8c08c1f2cd8be85f" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl id='c' tag='SELECT' innertext='AustraliaAustriaBelgiumBrazilCanadaCyprus (Anglicized)Cyprus (Greek)Czech RepublicDenmarkEstoniaFinlandFranceGermanyGreenlandHungaryIcelandItalyNetherlandsNew ZealandNorwayPolandPortugalSloveniaSouth AfricaSpainSwedenSwitzerlandTunisiaUnited KingdomUnited StatesUruguay' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="3000" DisplayName="Click Generate" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="83d2f291-4a7f-44a8-9ce1-56c3144443eb" InformativeScreenshot="d8cd51a97d968575bac253e12073604e" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl id='genbtn' tag='INPUT' aaname='Generate' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:UiElementExists DisplayName="Element Exists Beverly " Exists="[Beverly]" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7ccc47b4-4ffa-4ecc-aff3-cdfd7c641259" InformativeScreenshot="09c88b123559d1d15f7e2647ec71aa2c" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl aaname='Click here to find out!' innertext='Click here to find out!' /&gt;" TimeoutMS="3000">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[Beverly]" DisplayName="If Hanifa " sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376.8,2157.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Beverly " sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d9f14691-4eaf-4ade-9704-2e73351661d8" InformativeScreenshot="09c88b123559d1d15f7e2647ec71aa2c" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl aaname='Click here to find out!' parentid='details' tag='A' innertext='Click here to find out!' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Beverly " sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7eebcc20-a3ee-47a7-b4a3-ae097cdb26c1" InformativeScreenshot="3fedba86bfeef5ee962e394ca73a4a9f" Selector="&lt;html app='msedge.exe' title='*Baby&amp;apos;s First Domain' /&gt;&lt;webctrl tag='P' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[TextBeverly]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey  Back" sap:VirtualizedContainerService.HintSize="333.6,154.4" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="left" KeyModifiers="Alt" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cc624939-2448-4c29-a1dd-baaf245f4a85" InformativeScreenshot="d6d425dfa087e95815e5e212796ddc1c" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='*Baby&amp;apos;s First Domain*- Microsoft​ Edge' /&gt;&lt;ctrl name='*Baby&amp;apos;s First Domain - Microsoft Edge' role='pane' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text FullName" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a279b1d3-8080-4c96-ae5d-2c2df4a5b9a4" InformativeScreenshot="193124b9560f40ebd7f100db8626b09c" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl tag='H3' isleaf='1' idx='1' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[FullName]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Mother's" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_3">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="917154ae-6c6a-4383-878c-9ddec0adc06a" InformativeScreenshot="5291a3ff396d5d68058700ec1423d403" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl tag='DD' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[Mothers]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Phone" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_4">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="917154ae-6c6a-4383-878c-9ddec0adc06a" InformativeScreenshot="34fccbb87c0d733d13a854d8f1207fc9" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl isleaf='1' tag='DD' idx='2' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[Phone]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Country code" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_5">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="917154ae-6c6a-4383-878c-9ddec0adc06a" InformativeScreenshot="13a5fd850d8f39b1d9753b70079ae389" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl idx='4' tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='DD' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[CountryCode]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Birthday" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_6">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="917154ae-6c6a-4383-878c-9ddec0adc06a" InformativeScreenshot="7f6e1ca2d0bd77fbddca13efbb52c04c" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl idx='5' tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='DD' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[Birthday]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Username" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_7">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="917154ae-6c6a-4383-878c-9ddec0adc06a" InformativeScreenshot="1ad0b404bed77bfe51ebb272251d9d5e" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl idx='9' tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='DD' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[Username]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Password" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_8">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="917154ae-6c6a-4383-878c-9ddec0adc06a" InformativeScreenshot="f77609ee622fc55e18557f9c2ee4c0b9" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl idx='10' tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='DD' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[Password]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Email Address" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_9">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d84f9f49-f840-4fab-a2a8-49cae320e2ce" InformativeScreenshot="208d247842065e2434d0b2cdbd7958ec" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl idx='8' tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl tag='DD' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[EmailAddress]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Company" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_10">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="917154ae-6c6a-4383-878c-9ddec0adc06a" InformativeScreenshot="a76d970ef7c3341c5417a5ba20b566a6" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl idx='16' tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='DD' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[Company]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Occupation" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_11">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e4f2b397-d452-4a64-b4ed-378cd98123af" InformativeScreenshot="8611b2b0a67e87c9a427257b3955acd1" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl idx='17' tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='DD' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[Occupation]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Favorite color" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_12">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="38202fb4-3ac2-4469-9a3e-ac7f67459e9a" InformativeScreenshot="6f12e82947551d22c2138fff14895b78" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl idx='24' tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='DD' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[FavoriteColor]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text FullName" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_16">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a279b1d3-8080-4c96-ae5d-2c2df4a5b9a4" InformativeScreenshot="193124b9560f40ebd7f100db8626b09c" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl tag='H3' isleaf='1' idx='1' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[FullName]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Mother's" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_17">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="917154ae-6c6a-4383-878c-9ddec0adc06a" InformativeScreenshot="5291a3ff396d5d68058700ec1423d403" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl tag='DD' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[Mothers]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Phone" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_18">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="917154ae-6c6a-4383-878c-9ddec0adc06a" InformativeScreenshot="34fccbb87c0d733d13a854d8f1207fc9" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl isleaf='1' tag='DD' idx='2' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[Phone]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Country code" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_19">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="917154ae-6c6a-4383-878c-9ddec0adc06a" InformativeScreenshot="13a5fd850d8f39b1d9753b70079ae389" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl idx='4' tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='DD' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[CountryCode]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Birthday" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_20">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="917154ae-6c6a-4383-878c-9ddec0adc06a" InformativeScreenshot="7f6e1ca2d0bd77fbddca13efbb52c04c" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl idx='5' tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='DD' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[Birthday]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Username" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_21">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="917154ae-6c6a-4383-878c-9ddec0adc06a" InformativeScreenshot="1ad0b404bed77bfe51ebb272251d9d5e" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl idx='9' tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='DD' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[Username]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Password" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_22">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="917154ae-6c6a-4383-878c-9ddec0adc06a" InformativeScreenshot="f77609ee622fc55e18557f9c2ee4c0b9" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl idx='10' tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='DD' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[Password]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Email Address" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_23">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d84f9f49-f840-4fab-a2a8-49cae320e2ce" InformativeScreenshot="208d247842065e2434d0b2cdbd7958ec" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl idx='8' tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl tag='DD' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[EmailAddress]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Company" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_24">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="917154ae-6c6a-4383-878c-9ddec0adc06a" InformativeScreenshot="a76d970ef7c3341c5417a5ba20b566a6" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl idx='16' tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='DD' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[Company]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Occupation" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_25">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e4f2b397-d452-4a64-b4ed-378cd98123af" InformativeScreenshot="8611b2b0a67e87c9a427257b3955acd1" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl idx='17' tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='DD' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[Occupation]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Favorite color" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_26">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="38202fb4-3ac2-4469-9a3e-ac7f67459e9a" InformativeScreenshot="6f12e82947551d22c2138fff14895b78" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl idx='24' tag='DT' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='DD' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[FavoriteColor]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+          </Sequence>
+        </ActivityAction>
+      </ui:BrowserScope.Body>
+    </ui:BrowserScope>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim emailPattern As String = &quot;[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}&quot;&#xA;Dim match As System.Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(inputText, emailPattern)&#xA;If match.Success Then&#xA;    emailAddress = match.Value&#xA;End If&#xA;" DisplayName="Invoke Code Email Add" sap:VirtualizedContainerService.HintSize="555.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="inputText">[EmailAddress]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="emailAddress">[SpiltEmailAddress]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_dt_Identity]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="555.2,707.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="521.6,519.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,429.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("FullName")]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[FullName]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Mother's maiden name")]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Object">[Mothers]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Phone")]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Object">[Phone]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Country code")]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Object">[CountryCode]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Birthday")]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Object">[Birthday]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Email Address")]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Object">[SpiltEmailAddress]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Company")]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[Company + " - " + Occupation]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Favorite color")]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Object">[FavoriteColor]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Username")]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Object">[Username]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Password")]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Object">[Password]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Beverly")]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Object">[TextBeverly]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:MultipleAssign>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+  </Sequence>
+</Activity>
