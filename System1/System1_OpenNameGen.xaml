@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1360,890.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1361.6,2052.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>System_OpenNameGen_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -36,6 +36,7 @@
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -69,27 +70,214 @@
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="System_OpenNameGen" sap:VirtualizedContainerService.HintSize="545.6,374.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="System_OpenNameGen" sap:VirtualizedContainerService.HintSize="808,1988" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser Gen" sap:VirtualizedContainerService.HintSize="483.20000000000005,262.4" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_URL]">
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser Gen" sap:VirtualizedContainerService.HintSize="745.6,1876" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_URL]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,136.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="712,1750.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="Gender" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="387.2,24.8" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="649.6,24.8" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item Name set" sap:VirtualizedContainerService.HintSize="649.6,156" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="Arabic">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="64">
+                  <x:String>American</x:String>
+                  <x:String>Arabic</x:String>
+                  <x:String>Australian</x:String>
+                  <x:String>Brazil</x:String>
+                  <x:String>Chechen (Latin)</x:String>
+                  <x:String>Chinese</x:String>
+                  <x:String>Chinese (Traditional)</x:String>
+                  <x:String>Croatian</x:String>
+                  <x:String>Czech</x:String>
+                  <x:String>Danish</x:String>
+                  <x:String>Dutch</x:String>
+                  <x:String>England/Wales</x:String>
+                  <x:String>Eritrean</x:String>
+                  <x:String>Finnish</x:String>
+                  <x:String>French</x:String>
+                  <x:String>German</x:String>
+                  <x:String>Greenland</x:String>
+                  <x:String>Hispanic</x:String>
+                  <x:String>Hobbit</x:String>
+                  <x:String>Hungarian</x:String>
+                  <x:String>Icelandic</x:String>
+                  <x:String>Igbo</x:String>
+                  <x:String>Italian</x:String>
+                  <x:String>Japanese</x:String>
+                  <x:String>Japanese (Anglicized)</x:String>
+                  <x:String>Klingon</x:String>
+                  <x:String>Ninja</x:String>
+                  <x:String>Norwegian</x:String>
+                  <x:String>Persian</x:String>
+                  <x:String>Polish</x:String>
+                  <x:String>Russian</x:String>
+                  <x:String>Russian (Cyrillic)</x:String>
+                  <x:String>Scottish</x:String>
+                  <x:String>Slovenian</x:String>
+                  <x:String>Swedish</x:String>
+                  <x:String>Thai</x:String>
+                  <x:String>Vietnamese</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f0d22141-a5ad-4fe5-b98b-cf0399a6e330" InformativeScreenshot="dde6ef6b46c779b6c4ef578a67b274b0" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl id='n' tag='SELECT' visibleinnertext='American&amp;#xA;Arabic&amp;#xA;Australian&amp;#xA;Brazil&amp;#xA;Chechen (Latin)&amp;#xA;Chinese&amp;#xA;Chinese (Traditional)&amp;#xA;Croatian&amp;#xA;Czech&amp;#xA;Danish&amp;#xA;Dutch&amp;#xA;England/Wales&amp;#xA;Eritrean&amp;#xA;Finnish&amp;#xA;French&amp;#xA;German&amp;#xA;Greenland&amp;#xA;Hispanic&amp;#xA;Hobbit&amp;#xA;Hungarian&amp;#xA;Icelandic&amp;#xA;Igbo&amp;#xA;Italian&amp;#xA;Japanese&amp;#xA;Japanese (Anglicized)&amp;#xA;Klingon&amp;#xA;Ninja&amp;#xA;Norwegian&amp;#xA;Persian&amp;#xA;Polish&amp;#xA;Russian&amp;#xA;Russian (Cyrillic)&amp;#xA;Scottish&amp;#xA;Slovenian&amp;#xA;Swedish&amp;#xA;Thai&amp;#xA;Vietnamese' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item Country " sap:VirtualizedContainerService.HintSize="649.6,156" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="Tunisia">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="32">
+                  <x:String>Australia</x:String>
+                  <x:String>Austria</x:String>
+                  <x:String>Belgium</x:String>
+                  <x:String>Brazil</x:String>
+                  <x:String>Canada</x:String>
+                  <x:String>Cyprus (Anglicized)</x:String>
+                  <x:String>Cyprus (Greek)</x:String>
+                  <x:String>Czech Republic</x:String>
+                  <x:String>Denmark</x:String>
+                  <x:String>Estonia</x:String>
+                  <x:String>Finland</x:String>
+                  <x:String>France</x:String>
+                  <x:String>Germany</x:String>
+                  <x:String>Greenland</x:String>
+                  <x:String>Hungary</x:String>
+                  <x:String>Iceland</x:String>
+                  <x:String>Italy</x:String>
+                  <x:String>Netherlands</x:String>
+                  <x:String>New Zealand</x:String>
+                  <x:String>Norway</x:String>
+                  <x:String>Poland</x:String>
+                  <x:String>Portugal</x:String>
+                  <x:String>Slovenia</x:String>
+                  <x:String>South Africa</x:String>
+                  <x:String>Spain</x:String>
+                  <x:String>Sweden</x:String>
+                  <x:String>Switzerland</x:String>
+                  <x:String>Tunisia</x:String>
+                  <x:String>United Kingdom</x:String>
+                  <x:String>United States</x:String>
+                  <x:String>Uruguay</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="852dc22a-b1fc-43e6-9804-08e5845ae53a" InformativeScreenshot="41a7671ee47f352a8c08c1f2cd8be85f" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl id='c' tag='SELECT' innertext='AustraliaAustriaBelgiumBrazilCanadaCyprus (Anglicized)Cyprus (Greek)Czech RepublicDenmarkEstoniaFinlandFranceGermanyGreenlandHungaryIcelandItalyNetherlandsNew ZealandNorwayPolandPortugalSloveniaSouth AfricaSpainSwedenSwitzerlandTunisiaUnited KingdomUnited StatesUruguay' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+            <ui:UiElementExists DisplayName="Element Exists 'SPAN  gender-male'" Exists="[Gender]" sap:VirtualizedContainerService.HintSize="649.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4edcfe07-4e6c-42a4-8358-78379e51079b" InformativeScreenshot="8bd05783d9fad5c954f1481663092cef" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl id='gender-male' tag='SPAN' visibleinnertext='80%' /&gt;" TimeoutMS="10">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <Sequence DisplayName="Sequence Gender 80" sap:VirtualizedContainerService.HintSize="649.6,1034.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[Gender = False]" sap:VirtualizedContainerService.HintSize="587.2,922.4" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="553.6,739.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Int32" Name="CountGender" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_DOWN" DisplayName="Click Gender" sap:VirtualizedContainerService.HintSize="510.4,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f91157f1-1717-42a9-a89c-66fc30441e59" InformativeScreenshot="e6c9873d92babf75543dc25d29a3aba0" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl id='slider' tag='DIV' parentclass='cell' parentid='advanced-options' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:Click.Target>
+                    </ui:Click>
+                    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[CountGender &lt;= 29]" DisplayName="While" sap:VirtualizedContainerService.HintSize="510.4,502.4" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                      <ui:InterruptibleWhile.Body>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.8,365.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayBefore="0" DelayMS="0" DisplayName="Send Hotkey 'DIV  slider'" sap:VirtualizedContainerService.HintSize="433.6,154.4" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="left" KeyModifiers="None" SpecialKey="True">
+                            <ui:SendHotkey.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="99798928-8c0b-4183-bf88-cea30afc1aa2" InformativeScreenshot="b99c8f19a29aaa137c9f192f1d400a2a" Selector="&lt;html app='msedge.exe' title='Generate a Random Name - Fake Name Generator' /&gt;&lt;webctrl id='slider' parentclass='cell' parentid='advanced-options' /&gt;" TimeoutMS="0">
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:SendHotkey.Target>
+                          </ui:SendHotkey>
+                          <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[CountGender]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[CountGender + 1]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </ui:InterruptibleWhile.Body>
+                    </ui:InterruptibleWhile>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_5" />
+                </If.Else>
+              </If>
+            </Sequence>
           </Sequence>
         </ActivityAction>
       </ui:OpenBrowser.Body>

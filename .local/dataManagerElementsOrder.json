@@ -14,7 +14,7 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "PrimeNumber&Sequence_33",
+        "PrimeNumber&Sequence_8",
         "TransactionItem&StateMachine_1",
         "SystemException&StateMachine_1",
         "BusinessException&StateMachine_1",
@@ -39,7 +39,7 @@
       "Path": "Framework/GetTransactionData.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "PrimeNumber&Sequence_33",
+        "PrimeNumber&Sequence_8",
         "in_Num&Sequence_1",
         "Count&Sequence_1",
         "dt_DataTabel&Sequence_13"
@@ -100,7 +100,9 @@
       "Path": "System1/System1_GetInformation.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "PrimeNumber&Sequence_33",
+        "CountGender&Sequence_20",
+        "Gender&Sequence_1",
+        "PrimeNumber&Sequence_8",
         "FavoriteColor&Sequence_1",
         "Mothers&Sequence_1",
         "Phone&Sequence_1",
@@ -126,7 +128,7 @@
       "Path": "Framework/Process.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "PrimeNumber&Sequence_33"
+        "PrimeNumber&Sequence_8"
       ],
       "ArgumentsSectionElementsOrder": [
         "in_TransactionItem",
@@ -231,6 +233,28 @@
         "in_SystemException",
         "in_QueueRetry"
       ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "System1/Gender.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Gender&Sequence_1",
+        "CountGender&Sequence_2",
+        "PrimeNumber&Sequence_8"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/CloseAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "PrimeNumber&Sequence_8"
+      ],
+      "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
